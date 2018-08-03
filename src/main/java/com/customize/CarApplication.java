@@ -1,4 +1,4 @@
-package com.customize.car;
+package com.customize;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
