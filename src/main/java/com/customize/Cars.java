@@ -1,6 +1,6 @@
 package com.customize;
 
-public class Car {
+public class Cars {
 
   private String make;
   private String model;
@@ -8,21 +8,19 @@ public class Car {
   private String engine;
   private String engineSize;
   private String transmission;
-  private String interior;
 
-  public Car(String make, String model) {
+
+  public Cars(String make, String model, String color, String engine, String engineSize,
+      String transmission) {
     this.make = make;
     this.model = model;
-  }
-
-  public Car(String make){
-    this.make = make;
+    this.color = color;
+    this.engine = engine;
+    this.engineSize = engineSize;
+    this.transmission = transmission;
   }
 
   public String getMake() {
-    if(this.make.equals(" ")){
-      return "zero";
-    }
     return make;
   }
 
@@ -68,13 +66,5 @@ public class Car {
 
   public void setTransmission(String transmission) {
     this.transmission = transmission;
-  }
-
-  public String getInterior() {
-    return interior;
-  }
-
-  public void setInterior(String interior) {
-    this.interior = interior;
   }
 }//End of class

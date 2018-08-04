@@ -1,26 +1,21 @@
 package com.customize.controllers;
 
-import com.customize.Car;
+import com.customize.Cars;
 import com.customize.Garage;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class GarageController {
 
   @Autowired
-  private Garage garage;
+  Garage garage;
 
-  @GetMapping("/selectMake/{make}")
-  private Car selectCarMake(@PathVariable String make){
-    return new Car(make);
+  @PostMapping("/selectMake")
+  public Cars selectMake(@RequestParam("make") String make){
+    Cars car = garage.selectMake("Honda");
+    return car;
   }
-
-  @GetMapping("/selectModel/{model}")
-  private Car returnModel(@PathVariable String model){
-    return new Car("Chevy", model);
-  }
-
 }
