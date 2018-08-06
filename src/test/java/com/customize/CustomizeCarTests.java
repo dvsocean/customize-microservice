@@ -15,13 +15,13 @@ public class CustomizeCarTests {
   }
 
   @Test
-  public void shouldBeAbleToSelectMake() {
+  public void shouldBeAbleToSelectMake() throws NoMakeSelectedError {
     Car car = garage.selectMake("Honda");
     assertEquals("Honda", car.getMake());
   }
 
   @Test(expected = NoMakeSelectedError.class)
-  public void shouldThrowErrorIfNoCarIsSelected(){
-    assertEquals("Toyota", garage.selectMake("").getMake());
+  public void shouldThrowErrorIfNoCarIsSelected() throws NoMakeSelectedError {
+    assertEquals("Honda", garage.selectMake("").getMake());
   }
 }

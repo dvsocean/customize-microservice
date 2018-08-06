@@ -11,10 +11,14 @@ public class Garage {
     garage.add(new Car("Honda"));
   }
 
-  public Car selectMake(String make) {
-    for(Car car: garage) {
-      if(car.getMake().equals(make)){
-        return car;
+  public Car selectMake(String make) throws NoMakeSelectedError {
+    if(make.isEmpty()){
+      throw new NoMakeSelectedError();
+    } else {
+      for(Car car: garage) {
+        if(car.getMake().equals(make)){
+          return car;
+        }
       }
     }
     return null;
