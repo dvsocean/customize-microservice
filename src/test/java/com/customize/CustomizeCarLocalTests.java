@@ -25,4 +25,43 @@ public class CustomizeCarLocalTests {
     Cars car = garage.selectColor("Black");
     assertEquals("Black", car.getColor());
   }
-}
+
+  @Test
+  public void shouldBeAbleToSelectEngine(){
+    Cars car = garage.selectEngine("v12");
+    assertEquals("v12", car.getEngine());
+  }
+
+  @Test
+  public void shouldBeAbleToSelectEngineSize(){
+    Cars car = garage.selectEngineSize("8 liters");
+    assertEquals("8 liters", car.getEngineSize());
+  }
+
+  @Test
+  public void shouldBeAbleToSelectTransmission(){
+    Cars car = garage.selectTransmission("Automatic");
+    assertEquals("Automatic", car.getTransmission());
+  }
+
+  @Test
+  public void shouldBeAbleToSelectInterior(){
+    Cars car = garage.selectInterior("Black and yellow");
+    assertEquals("Black and yellow", car.getInterior());
+  }
+
+  @Test
+  public void shouldReturnBlackIfInteriorColorNotSelected(){
+    Cars car = garage.selectInterior("");
+    assertEquals("Black", car.getInterior());
+  }
+
+  @Test
+  public void shouldReturnDefaultEngineIfNoSelectionIsMade() {
+
+  }
+
+
+
+
+}//End of class

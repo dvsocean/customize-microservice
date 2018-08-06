@@ -15,7 +15,16 @@ public class GarageController {
 
   @PostMapping("/selectMake")
   public Cars selectMake(@RequestParam("make") String make){
-    Cars car = garage.selectMake("Honda");
-    return car;
+    return garage.selectMake("Honda");
+  }
+
+  @PostMapping("/selectModel")
+  public Cars selectModel(@RequestParam("model") String model){
+    return garage.selectModel(model);
+  }
+
+  @PostMapping("/selectColor")
+  public Cars selectColor(@RequestParam("color") String color){
+    return garage.selectColor(color);
   }
 }

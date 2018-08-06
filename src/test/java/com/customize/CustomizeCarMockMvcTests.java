@@ -27,4 +27,16 @@ public class CustomizeCarMockMvcTests {
     mockMvc.perform(post("/selectMake").param("make", "Honda")).andExpect(status().isOk())
     .andExpect(jsonPath("make").value("Honda"));
   }
+
+  @Test
+  public void shouldBeAbleToSelectModel() throws Exception {
+    mockMvc.perform(post("/selectModel").param("model", "Reventon")).andExpect(status().isOk())
+        .andExpect(jsonPath("model").value("Reventon"));
+  }
+
+  @Test
+  public void shouldBeAbleToSelectColor() throws Exception {
+    mockMvc.perform(post("/selectColor").param("color", "Black")).andExpect(status().isOk())
+        .andExpect(jsonPath("color").value("Black"));
+  }
 }

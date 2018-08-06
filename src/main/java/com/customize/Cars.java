@@ -8,16 +8,18 @@ public class Cars {
   private String engine;
   private String engineSize;
   private String transmission;
+  private String interior;
 
 
   public Cars(String make, String model, String color, String engine, String engineSize,
-      String transmission) {
+      String transmission, String interior) {
     this.make = make;
     this.model = model;
     this.color = color;
     this.engine = engine;
     this.engineSize = engineSize;
     this.transmission = transmission;
+    this.interior = interior;
   }
 
   public String getMake() {
@@ -67,4 +69,13 @@ public class Cars {
   public void setTransmission(String transmission) {
     this.transmission = transmission;
   }
+
+  public String getInterior(){
+    return interior;
+  }
+
+  public void setInterior(String interior){
+      this.interior = interior;
+  }
+
 }//End of class
