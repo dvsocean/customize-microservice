@@ -47,4 +47,16 @@ public class CustomizeCarMockMvcTests {
         .contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON))
         .andExpect(status().is5xxServerError());
   }
+
+  @Test
+  public void shouldBeAbleToSelectModel() throws Exception {
+    mockMvc.perform(post("/selectModel").param("model", "Accord").contentType(MediaType.APPLICATION_JSON)
+    .accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk()).andExpect(jsonPath("model").value("Accord"));
+  }
+
+  @Test(expected = NestedServletException.class)
+  public void shouldThrowErrorIfNoModelSelected() throws Exception {
+    mockMvc.perform(post("/selectModel").param("model", "").contentType(MediaType.APPLICATION_JSON)
+    .accept(MediaType.APPLICATION_JSON)).andExpect(status().is5xxServerError());
+  }
 }
