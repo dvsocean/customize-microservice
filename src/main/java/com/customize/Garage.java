@@ -71,5 +71,7 @@ public class Garage {
   }
 
 
-
+  public List<Car> garageList() {
+    return garage;
+  }
 }//End of class
