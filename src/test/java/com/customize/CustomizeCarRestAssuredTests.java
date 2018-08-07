@@ -9,7 +9,7 @@ import org.junit.Test;
 public class CustomizeCarRestAssuredTests {
 
   @Before
-  public void setUp() throws Exception {
+  public void setUp() {
     RestAssured.baseURI = "http://localhost:5000";
   }
 
